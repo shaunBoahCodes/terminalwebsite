@@ -10,23 +10,27 @@ export const matrixStore = defineStore('matrix', {
         showIntro: true
     }),
     getters: {
+        // generates every ID needed for x amount of columns in an array to use
         columnID(state) {
             var alpArr = []
             alpArr = state.alpID.split(' ') 
             alpArr = alpArr.slice(0, state.x)
             return alpArr
         },
+        // generates every number ??
         rowID(state) {
             const columnIds = []
             for (let i = 1; i <= state.x; i++) columnIds.push(i)
             return columnIds
         },
+        // needed for fillID() ------ generates an array for each column
         columns(state) {
             for (let i = 0; i < state.x; i++) {
                 state.allID[i] = []
             }
             return state.allID
         },
+        // generates every ID needed for each element using the arrays from colmns()
         fillID(state) {
             for (let j = 0; j < this.columnID.length; j++) {
                 const colNum = this.columnID[j]
