@@ -12,7 +12,7 @@
   </div>
   <div class="press-any">
     <span>PRESS</span>
-    <span style="margin-left: 16px">ANY</span>
+    <span style="margin-left: 15px">ANY</span>
     <span style="margin-left: 16px">KEY</span>
   </div>
 </template>
@@ -61,6 +61,7 @@ onBeforeMount(() => {
   grid-template-columns: 15px;
   grid-template-rows: repeat(60, 15px);
   gap: 5px;
+  opacity: 0.5;
 }
 .row {
   display: flex;
@@ -104,7 +105,7 @@ onBeforeMount(() => {
   top: 60px;
   left: calc(50% - 105px);
   color: var(--acc-1);
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   animation: appear 4s linear;
   opacity: 1;
 }
